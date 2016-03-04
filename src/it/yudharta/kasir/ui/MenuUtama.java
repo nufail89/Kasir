@@ -36,24 +36,24 @@ public class MenuUtama extends javax.swing.JFrame {
 
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jMenu2 = new javax.swing.JMenu();
+        mnMaster = new javax.swing.JMenu();
+        miDaftarBarang = new javax.swing.JMenuItem();
+        mnTransaksi = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Kasir");
         setExtendedState(getExtendedState() | MAXIMIZED_BOTH);
 
-        jMenu1.setText("Master Data");
+        mnMaster.setText("Master Data");
 
-        jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_B, java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem1.setText("Daftar Barang");
-        jMenu1.add(jMenuItem1);
+        miDaftarBarang.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_B, java.awt.event.InputEvent.CTRL_MASK));
+        miDaftarBarang.setText("Daftar Barang");
+        mnMaster.add(miDaftarBarang);
 
-        jMenuBar1.add(jMenu1);
+        jMenuBar1.add(mnMaster);
 
-        jMenu2.setText("Transaksi");
-        jMenuBar1.add(jMenu2);
+        mnTransaksi.setText("Transaksi");
+        jMenuBar1.add(mnTransaksi);
 
         setJMenuBar(jMenuBar1);
 
@@ -74,10 +74,10 @@ public class MenuUtama extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JMenuItem miDaftarBarang;
+    private javax.swing.JMenu mnMaster;
+    private javax.swing.JMenu mnTransaksi;
     // End of variables declaration//GEN-END:variables
 }
