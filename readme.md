@@ -6,4 +6,4 @@ Untuk Menjalankan program dari Netbeans IDE lakukan langkah-langkah berikut:
   2. Tunggu Proses duplikasi project sampai selesai.
   3. Buka IDE netbeans.
   4. Dari Menu pilih Team | Git | Clone;
-      ![alt tag](https://raw.githubusercontent.com/it-yudharta/Kasir/master/tutorial/image/01.clone.png)
+      <img src="https://raw.githubusercontent.com/it-yudharta/Kasir/master/tutorial/image/02.clone.png" width="90%"></img> 
