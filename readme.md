@@ -21,6 +21,10 @@ Untuk Menjalankan program dari Netbeans IDE lakukan langkah-langkah berikut:
 	<img src="https://raw.githubusercontent.com/it-yudharta/Kasir/master/tutorial/image/08.name_location.png" width="70%"></img>
   11. add folder untuk source package dengan src. Pilih Finish.<br>
 	<img src="https://raw.githubusercontent.com/it-yudharta/Kasir/master/tutorial/image/09.sources.png" width="70%"></img>
-  
-  
-    
+  12. klik kanan Libraries | add library...<br>
+	<img src="https://raw.githubusercontent.com/it-yudharta/Kasir/master/tutorial/image/10.add_library.png" width="30%"></img>
+  13. pada Global Libraries pilih Mysql JDBC Driver. Add Library.<br>
+	<img src="https://raw.githubusercontent.com/it-yudharta/Kasir/master/tutorial/image/11.mysql_jdbc.png" width="30%"></img>
+  14. klik kanan project | properties | run | Browse Main class menjadi `it.yudharta.kasir.Utama`<br>
+	<img src="https://raw.githubusercontent.com/it-yudharta/Kasir/master/tutorial/image/12.Main.png" width="30%"></img>
+  15. Jalankan Program.
