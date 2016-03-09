@@ -84,6 +84,11 @@ public class AturKoneksi extends javax.swing.JDialog {
 
         btnSimpan.setText("Simpan");
         btnSimpan.setEnabled(false);
+        btnSimpan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSimpanActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -164,6 +169,10 @@ public class AturKoneksi extends javax.swing.JDialog {
             btnSimpan.setEnabled(true);
         }
     }//GEN-LAST:event_btnTesActionPerformed
+
+    private void btnSimpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSimpanActionPerformed
+        
+    }//GEN-LAST:event_btnSimpanActionPerformed
 
     /**
      * @param args the command line arguments
