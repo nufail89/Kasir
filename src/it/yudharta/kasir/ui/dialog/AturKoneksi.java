@@ -33,6 +33,7 @@ public class AturKoneksi extends javax.swing.JDialog {
     public AturKoneksi(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        this.properti = new Properties();
         muatProperti("config.properties");
     }
 
@@ -238,7 +239,6 @@ public class AturKoneksi extends javax.swing.JDialog {
         File file = new File(namaFile);
 
         if (file.exists()) {
-            this.properti = new Properties();
             FileInputStream fis;
             try {
                 fis = new FileInputStream(namaFile);
