@@ -28,7 +28,7 @@ public class Utama {
     /**
      * Frame Menu Utama dibuat static agar bisa diakses dari class lain.
      */
-    public static MenuUtama utama = MenuUtama.getInstance();
+    public static MenuUtama menuUtama = MenuUtama.getInstance();
 
     /**
      * Menjalankan Frame Menu Utama.
@@ -45,7 +45,7 @@ public class Utama {
         }
 
         java.awt.EventQueue.invokeLater(()
-                -> utama.setVisible(true));
+                -> menuUtama.setVisible(true));
     }
 
 }
