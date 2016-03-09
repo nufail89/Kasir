@@ -72,6 +72,11 @@ public class AturKoneksi extends javax.swing.JDialog {
         jLabel5.setText("Password");
 
         btnTes.setText("Tes Koneksi");
+        btnTes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTesActionPerformed(evt);
+            }
+        });
 
         btnSimpan.setText("Simpan");
 
@@ -145,6 +150,10 @@ public class AturKoneksi extends javax.swing.JDialog {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnTesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTesActionPerformed
+        
+    }//GEN-LAST:event_btnTesActionPerformed
 
     /**
      * @param args the command line arguments
