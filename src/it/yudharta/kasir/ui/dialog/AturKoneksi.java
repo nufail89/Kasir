@@ -9,12 +9,15 @@
  */
 package it.yudharta.kasir.ui.dialog;
 
+import java.util.Properties;
+
 /**
  *
  * @author cahya
  */
 public class AturKoneksi extends javax.swing.JDialog {
 
+    Properties properti;
     /**
      * Creates new form AturKoneksi
      */
