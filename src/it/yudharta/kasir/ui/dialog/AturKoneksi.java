@@ -12,7 +12,11 @@ package it.yudharta.kasir.ui.dialog;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 import java.util.Properties;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -79,6 +83,7 @@ public class AturKoneksi extends javax.swing.JDialog {
         });
 
         btnSimpan.setText("Simpan");
+        btnSimpan.setEnabled(false);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -152,7 +157,11 @@ public class AturKoneksi extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnTesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTesActionPerformed
-        
+        btnSimpan.setEnabled(false);
+        if (terkoneksi()) {
+            JOptionPane.showMessageDialog(this, "Koneksi Berhasil Terhubung");
+            btnSimpan.setEnabled(true);
+        }
     }//GEN-LAST:event_btnTesActionPerformed
 
     /**
@@ -229,5 +238,24 @@ public class AturKoneksi extends javax.swing.JDialog {
             txUserName.setText(this.properti.getProperty("user"));
             txPassword.setText(this.properti.getProperty("password"));
         }
+    }
+
+    private boolean terkoneksi() {
+        String driver = "com.mysql.jdbc.Driver";
+        boolean hasil;
+
+        try {
+            Class.forName(driver);
+            Connection conn = DriverManager.getConnection("jdbc:mysql://"
+                    + txHost.getText() + ":" + txPort.getText()
+                    + "/" + txDatabase.getText(), txUserName.getText(),
+                    txPassword.getText());
+            hasil = true;
+        } catch (SQLException | ClassNotFoundException ex) {
+            hasil = false;
+            JOptionPane.showMessageDialog(null, ex);
+        }
+
+        return hasil;
     }
 }
