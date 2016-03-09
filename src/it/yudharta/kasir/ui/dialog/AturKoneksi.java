@@ -11,6 +11,7 @@ package it.yudharta.kasir.ui.dialog;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -171,7 +172,9 @@ public class AturKoneksi extends javax.swing.JDialog {
     }//GEN-LAST:event_btnTesActionPerformed
 
     private void btnSimpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSimpanActionPerformed
-        
+        if (tersimpan("config.properties")) {
+            JOptionPane.showMessageDialog(this, "Data Berhasil Tersimpan");
+        }
     }//GEN-LAST:event_btnSimpanActionPerformed
 
     /**
@@ -266,6 +269,33 @@ public class AturKoneksi extends javax.swing.JDialog {
             JOptionPane.showMessageDialog(null, ex);
         }
 
+        return hasil;
+    }
+
+    private boolean tersimpan(String namaFile) {
+        File file = new File(namaFile);
+        boolean hasil;
+        
+        try {
+            if (!file.exists()) {
+                file.createNewFile();
+
+                FileOutputStream fos = new FileOutputStream(namaFile);
+
+                this.properti.setProperty("host", txHost.getText());
+                this.properti.setProperty("database", txDatabase.getText());
+                this.properti.setProperty("port", txPort.getText());
+                this.properti.setProperty("user", txUserName.getText());
+                this.properti.setProperty("password", txPassword.getText());
+
+                this.properti.store(fos, "koneksi database...");
+            }
+            hasil = true;
+        } catch (IOException e) {
+           hasil = false;
+           JOptionPane.showMessageDialog(null, "Simpan Data Gagal \n"+ e);
+        }
+        
         return hasil;
     }
 }
