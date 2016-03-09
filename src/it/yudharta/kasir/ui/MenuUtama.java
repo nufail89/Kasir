@@ -5,6 +5,8 @@
  */
 package it.yudharta.kasir.ui;
 
+import it.yudharta.kasir.ui.dialog.AturKoneksi;
+
 /**
  *
  * @author cahya
@@ -23,8 +25,10 @@ public class MenuUtama extends javax.swing.JFrame {
     }
 
     private static class MenuUtamaHolder {
+
         private static final MenuUtama INSTANCE = new MenuUtama();
     }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -54,6 +58,11 @@ public class MenuUtama extends javax.swing.JFrame {
         mnMaster.add(jSeparator1);
 
         miAturKoneksi.setText("Atur Koneksi");
+        miAturKoneksi.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                miAturKoneksiActionPerformed(evt);
+            }
+        });
         mnMaster.add(miAturKoneksi);
 
         jMenuBar1.add(mnMaster);
@@ -79,6 +88,12 @@ public class MenuUtama extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void miAturKoneksiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miAturKoneksiActionPerformed
+        AturKoneksi dialog = new AturKoneksi(this, true);
+        dialog.setVisible(true);
+    }//GEN-LAST:event_miAturKoneksiActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPopupMenu.Separator jSeparator1;
