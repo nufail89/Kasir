@@ -262,7 +262,7 @@ public class AturKoneksi extends javax.swing.JDialog {
             Connection conn = DriverManager.getConnection("jdbc:mysql://"
                     + txHost.getText() + ":" + txPort.getText()
                     + "/" + txDatabase.getText(), txUserName.getText(),
-                    txPassword.getText());
+                    new String(txPassword.getPassword()));
             hasil = true;
         } catch (SQLException | ClassNotFoundException ex) {
             hasil = false;
@@ -275,7 +275,7 @@ public class AturKoneksi extends javax.swing.JDialog {
     private boolean tersimpan(String namaFile) {
         File file = new File(namaFile);
         boolean hasil;
-        
+
         try {
             if (!file.exists()) {
                 file.createNewFile();
@@ -286,16 +286,16 @@ public class AturKoneksi extends javax.swing.JDialog {
                 this.properti.setProperty("database", txDatabase.getText());
                 this.properti.setProperty("port", txPort.getText());
                 this.properti.setProperty("user", txUserName.getText());
-                this.properti.setProperty("password", txPassword.getText());
+                this.properti.setProperty("password", new String(txPassword.getPassword()));
 
                 this.properti.store(fos, "koneksi database...");
             }
             hasil = true;
         } catch (IOException e) {
-           hasil = false;
-           JOptionPane.showMessageDialog(null, "Simpan Data Gagal \n"+ e);
+            hasil = false;
+            JOptionPane.showMessageDialog(null, "Simpan Data Gagal \n" + e);
         }
-        
+
         return hasil;
     }
 }
