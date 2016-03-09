@@ -1,13 +1,17 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Copyright (C) 2016 cahya
+ *
+ * Program ini adalah Aplikasi Gratis, Anda dapat Mengembangkan atau
+ * merubah sebagian atau seluruh kode, dengan seizin pengembang.
+ *
+ * Program ini dikembangkan dengan harapan agar bermanfaat,
+ * tapi tanpa GARANSI apapun.
  */
 package it.yudharta.kasir.ui.dialog;
 
 /**
  *
- * @author GUDANG01
+ * @author cahya
  */
 public class AturKoneksi extends javax.swing.JDialog {
 
