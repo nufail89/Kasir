@@ -279,17 +279,17 @@ public class AturKoneksi extends javax.swing.JDialog {
         try {
             if (!file.exists()) {
                 file.createNewFile();
-
-                FileOutputStream fos = new FileOutputStream(namaFile);
-
-                this.properti.setProperty("host", txHost.getText());
-                this.properti.setProperty("database", txDatabase.getText());
-                this.properti.setProperty("port", txPort.getText());
-                this.properti.setProperty("user", txUserName.getText());
-                this.properti.setProperty("password", new String(txPassword.getPassword()));
-
-                this.properti.store(fos, "koneksi database...");
             }
+
+            FileOutputStream fos = new FileOutputStream(namaFile);
+
+            this.properti.setProperty("host", txHost.getText());
+            this.properti.setProperty("database", txDatabase.getText());
+            this.properti.setProperty("port", txPort.getText());
+            this.properti.setProperty("user", txUserName.getText());
+            this.properti.setProperty("password", new String(txPassword.getPassword()));
+
+            this.properti.store(fos, "koneksi database...");
             hasil = true;
         } catch (IOException e) {
             hasil = false;
