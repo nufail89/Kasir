@@ -38,6 +38,8 @@ public class MenuUtama extends javax.swing.JFrame {
         jMenuBar1 = new javax.swing.JMenuBar();
         mnMaster = new javax.swing.JMenu();
         miDaftarBarang = new javax.swing.JMenuItem();
+        jSeparator1 = new javax.swing.JPopupMenu.Separator();
+        miAturKoneksi = new javax.swing.JMenuItem();
         mnTransaksi = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -49,6 +51,10 @@ public class MenuUtama extends javax.swing.JFrame {
         miDaftarBarang.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_B, java.awt.event.InputEvent.CTRL_MASK));
         miDaftarBarang.setText("Daftar Barang");
         mnMaster.add(miDaftarBarang);
+        mnMaster.add(jSeparator1);
+
+        miAturKoneksi.setText("Atur Koneksi");
+        mnMaster.add(miAturKoneksi);
 
         jMenuBar1.add(mnMaster);
 
@@ -75,7 +81,9 @@ public class MenuUtama extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JPopupMenu.Separator jSeparator1;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JMenuItem miAturKoneksi;
     private javax.swing.JMenuItem miDaftarBarang;
     private javax.swing.JMenu mnMaster;
     private javax.swing.JMenu mnTransaksi;
