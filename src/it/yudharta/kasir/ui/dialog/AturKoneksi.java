@@ -9,6 +9,9 @@
  */
 package it.yudharta.kasir.ui.dialog;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.util.Properties;
 
 /**
@@ -18,12 +21,14 @@ import java.util.Properties;
 public class AturKoneksi extends javax.swing.JDialog {
 
     Properties properti;
+
     /**
      * Creates new form AturKoneksi
      */
     public AturKoneksi(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        muatProperti("config.properties");
     }
 
     /**
@@ -197,4 +202,23 @@ public class AturKoneksi extends javax.swing.JDialog {
     private javax.swing.JTextField txPort;
     private javax.swing.JTextField txUserName;
     // End of variables declaration//GEN-END:variables
+
+    private void muatProperti(String namaFile) {
+        File file = new File(namaFile);
+
+        if (file.exists()) {
+            this.properti = new Properties();
+            FileInputStream fis;
+            try {
+                fis = new FileInputStream(namaFile);
+                properti.load(fis);
+            } catch (IOException ex) {
+            }
+            txHost.setText(this.properti.getProperty("host"));
+            txDatabase.setText(this.properti.getProperty("database"));
+            txPort.setText(this.properti.getProperty("port"));
+            txUserName.setText(this.properti.getProperty("user"));
+            txPassword.setText(this.properti.getProperty("password"));
+        }
+    }
 }
