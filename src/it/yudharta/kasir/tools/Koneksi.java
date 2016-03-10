@@ -9,17 +9,23 @@
  */
 package it.yudharta.kasir.tools;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.Properties;
 import javax.swing.JOptionPane;
 
 /**
- * <code>Koneksi</code> digunakan untuk mendapatkan instance koneksi ke database.
- * 
+ * Koneksi digunakan untuk mendapatkan instance koneksi ke database.
+ *
  * @author cahya
  */
 public class Koneksi {
+
+    private final String NAMA_FILE = "config.properties";
 
     private Koneksi() {
     }
@@ -34,15 +40,27 @@ public class Koneksi {
     }
 
     public Connection getKoneksi() {
+        File file = new File(NAMA_FILE);
         Connection conn = null;
         String driver = "com.mysql.jdbc.Driver";
 
-        try {
-            Class.forName(driver);
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/kasir",
-                    "root", "server");
-        } catch (SQLException | ClassNotFoundException ex) {
-            JOptionPane.showMessageDialog(null, ex);
+        if (file.exists()) {
+            FileInputStream fis;
+            try {
+                fis = new FileInputStream(NAMA_FILE);
+                Properties properti = new Properties();
+                properti.load(fis);
+
+                Class.forName(driver);
+                conn = DriverManager.getConnection("jdbc:mysql://"
+                        + properti.getProperty("host") + ":"
+                        + properti.getProperty("port")
+                        + "/" + properti.getProperty("database"),
+                        properti.getProperty("user"),
+                        properti.getProperty("password"));
+            } catch (SQLException | ClassNotFoundException | IOException ex) {
+                JOptionPane.showMessageDialog(null, ex);
+            }
         }
 
         return conn;
