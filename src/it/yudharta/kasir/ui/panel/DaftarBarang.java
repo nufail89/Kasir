@@ -79,6 +79,11 @@ public class DaftarBarang extends javax.swing.JPanel {
 
         btnRefresh.setMnemonic('R');
         btnRefresh.setText("Refresh");
+        btnRefresh.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRefreshActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout pnlSampingLayout = new javax.swing.GroupLayout(pnlSamping);
         pnlSamping.setLayout(pnlSampingLayout);
@@ -126,6 +131,10 @@ public class DaftarBarang extends javax.swing.JPanel {
     private void btnKeluarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKeluarActionPerformed
         this.pane.remove(this.pane.indexOfComponent(this));
     }//GEN-LAST:event_btnKeluarActionPerformed
+
+    private void btnRefreshActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRefreshActionPerformed
+        refreshData();
+    }//GEN-LAST:event_btnRefreshActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
