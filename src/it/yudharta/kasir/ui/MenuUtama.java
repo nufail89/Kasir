@@ -6,6 +6,7 @@
 package it.yudharta.kasir.ui;
 
 import it.yudharta.kasir.ui.dialog.AturKoneksi;
+import it.yudharta.kasir.ui.panel.DaftarBarang;
 
 /**
  *
@@ -38,7 +39,7 @@ public class MenuUtama extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jTabbedPane1 = new javax.swing.JTabbedPane();
+        panelUtama = new javax.swing.JTabbedPane();
         jMenuBar1 = new javax.swing.JMenuBar();
         mnMaster = new javax.swing.JMenu();
         miDaftarBarang = new javax.swing.JMenuItem();
@@ -50,10 +51,16 @@ public class MenuUtama extends javax.swing.JFrame {
         setTitle("Kasir");
         setExtendedState(getExtendedState() | MAXIMIZED_BOTH);
 
+        mnMaster.setMnemonic('M');
         mnMaster.setText("Master Data");
 
         miDaftarBarang.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_B, java.awt.event.InputEvent.CTRL_MASK));
         miDaftarBarang.setText("Daftar Barang");
+        miDaftarBarang.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                miDaftarBarangActionPerformed(evt);
+            }
+        });
         mnMaster.add(miDaftarBarang);
         mnMaster.add(jSeparator1);
 
@@ -77,12 +84,12 @@ public class MenuUtama extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 443, Short.MAX_VALUE)
+                .addComponent(panelUtama, javax.swing.GroupLayout.DEFAULT_SIZE, 443, Short.MAX_VALUE)
                 .addGap(0, 0, 0))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 326, Short.MAX_VALUE)
+            .addComponent(panelUtama, javax.swing.GroupLayout.DEFAULT_SIZE, 326, Short.MAX_VALUE)
         );
 
         pack();
@@ -94,13 +101,18 @@ public class MenuUtama extends javax.swing.JFrame {
         dialog.setVisible(true);
     }//GEN-LAST:event_miAturKoneksiActionPerformed
 
+    private void miDaftarBarangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miDaftarBarangActionPerformed
+        DaftarBarang daftarBarang = new DaftarBarang(panelUtama);
+        this.panelUtama.add("Daftar Barang", daftarBarang);
+    }//GEN-LAST:event_miDaftarBarangActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPopupMenu.Separator jSeparator1;
-    private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JMenuItem miAturKoneksi;
     private javax.swing.JMenuItem miDaftarBarang;
     private javax.swing.JMenu mnMaster;
     private javax.swing.JMenu mnTransaksi;
+    private javax.swing.JTabbedPane panelUtama;
     // End of variables declaration//GEN-END:variables
 }

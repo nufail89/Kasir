@@ -6,6 +6,7 @@
  *
  * Program ini dikembangkan dengan harapan agar bermanfaat,
  * tapi tanpa GARANSI apapun.
+ * netbean>ide>module>ext
  */
 package it.yudharta.kasir;
 
